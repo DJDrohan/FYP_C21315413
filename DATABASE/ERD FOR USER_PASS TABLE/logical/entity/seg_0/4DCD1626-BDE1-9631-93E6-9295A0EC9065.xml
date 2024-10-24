@@ -1,0 +1,87 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="4DCD1626-BDE1-9631-93E6-9295A0EC9065" name="passwords">
+<createdBy>droha</createdBy>
+<createdTime>2024-10-24 09:10:32 UTC</createdTime>
+<ownerDesignName>ERD FOR USER_PASS TABLE</ownerDesignName>
+<engineerTo>
+<item key="87C5C95C-3B11-6DB9-D460-BB11EB792557" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID" id="FD89C547-9386-7B96-58FB-8B7C9A2E47C5">
+<createdBy>droha</createdBy>
+<createdTime>2024-10-24 09:10:39 UTC</createdTime>
+<ownerDesignName>ERD FOR USER_PASS TABLE</ownerDesignName>
+<engineerTo>
+<item key="87C5C95C-3B11-6DB9-D460-BB11EB792557" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="hashedpasswords" id="04E59EC8-369E-42B0-4BDD-30CE4B480D62">
+<createdBy>droha</createdBy>
+<createdTime>2024-10-24 09:10:49 UTC</createdTime>
+<ownerDesignName>ERD FOR USER_PASS TABLE</ownerDesignName>
+<engineerTo>
+<item key="87C5C95C-3B11-6DB9-D460-BB11EB792557" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID1" id="46FE98F2-47CA-4F46-F0F6-D3BFBB77418A">
+<createdBy>droha</createdBy>
+<createdTime>2024-10-24 09:13:00 UTC</createdTime>
+<generatorID>10572E2A-68CC-E5DC-C98A-50C4EBEF9A96</generatorID>
+<ownerDesignName>ERD FOR USER_PASS TABLE</ownerDesignName>
+<engineerTo>
+<item key="87C5C95C-3B11-6DB9-D460-BB11EB792557" value="true"/>
+</engineerTo>
+<referedAttribute>4F2A315D-0124-1EEA-1D59-F16EBC46205E</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="salt" id="D7B69F41-FC4A-78E1-8E5D-8C9A587D29F8">
+<createdBy>droha</createdBy>
+<createdTime>2024-10-24 09:21:16 UTC</createdTime>
+<ownerDesignName>ERD FOR USER_PASS TABLE</ownerDesignName>
+<engineerTo>
+<item key="87C5C95C-3B11-6DB9-D460-BB11EB792557" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="FF7221FA-F482-20F6-E2B4-EB4E31ABACE4" name="passwords_PK">
+<createdBy>droha</createdBy>
+<createdTime>2024-10-24 09:10:45 UTC</createdTime>
+<ownerDesignName>ERD FOR USER_PASS TABLE</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="87C5C95C-3B11-6DB9-D460-BB11EB792557" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<newElementsIDs>FD89C547-9386-7B96-58FB-8B7C9A2E47C5</newElementsIDs>
+<usedAttributes>
+<attributeRef>FD89C547-9386-7B96-58FB-8B7C9A2E47C5</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

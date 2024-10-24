@@ -1,0 +1,6 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.relational.RelationalDesign>
+   <object objectType="Table" objectID="029FE87F-AF68-CE6C-3497-FAC94784112B" name="passwords" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.Table" propertyParentId="87C5C95C-3B11-6DB9-D460-BB11EB792557" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Table" objectID="6FD64F0A-DC5A-DA06-0711-B3695178D5CE" name="user" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.Table" propertyParentId="87C5C95C-3B11-6DB9-D460-BB11EB792557" propertySourceId="" propertyTargetId=""/>
+   <object objectType="FKIndexAssociation" objectID="3BE47FB0-AC9F-F6AF-DF70-8AA3E35CB49A" name="passwordsv1_user_FK" containerID="029FE87F-AF68-CE6C-3497-FAC94784112B" refContainerID="6FD64F0A-DC5A-DA06-0711-B3695178D5CE" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" propertyParentId="87C5C95C-3B11-6DB9-D460-BB11EB792557" propertySourceId="6FD64F0A-DC5A-DA06-0711-B3695178D5CE" propertyTargetId="029FE87F-AF68-CE6C-3497-FAC94784112B"/>
+</oracle.dbtools.crest.model.design.relational.RelationalDesign>

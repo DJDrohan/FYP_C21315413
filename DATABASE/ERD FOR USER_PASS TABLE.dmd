@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="ERD FOR USER_PASS TABLE" id="4D71D663-212B-FC90-8691-491C75E40CB6" version="3.5">
+<createdBy>droha</createdBy>
+<createdTime>2024-10-24 08:52:27 UTC</createdTime>
+<ownerDesignName>ERD FOR USER_PASS TABLE</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>4D71D663-212B-FC90-8691-491C75E40CB6</designId>
+</OSDM_Design>

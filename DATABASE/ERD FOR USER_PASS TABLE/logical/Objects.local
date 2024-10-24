@@ -1,0 +1,6 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.logical.LogicalDesign>
+   <object objectType="Entity" objectID="4DCD1626-BDE1-9631-93E6-9295A0EC9065" name="passwords" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.logical.Entity" propertyParentId="50BD22F2-7983-892E-1965-44F6C1B3CD29" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Entity" objectID="95C43B53-D2BF-688A-C18C-20792EA6D6F7" name="user" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.logical.Entity" propertyParentId="50BD22F2-7983-892E-1965-44F6C1B3CD29" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Relation" objectID="10572E2A-68CC-E5DC-C98A-50C4EBEF9A96" name="User_FK" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.logical.Relation" propertyParentId="50BD22F2-7983-892E-1965-44F6C1B3CD29" propertySourceId="95C43B53-D2BF-688A-C18C-20792EA6D6F7" propertyTargetId="4DCD1626-BDE1-9631-93E6-9295A0EC9065"/>
+</oracle.dbtools.crest.model.design.logical.LogicalDesign>

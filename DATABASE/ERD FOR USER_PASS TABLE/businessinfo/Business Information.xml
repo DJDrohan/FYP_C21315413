@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BusinessInfoDesign class="oracle.dbtools.crest.model.businessinfo.BusinessInfoDesign" name="Business Information" id="A896A842-09CC-5BC3-BD9B-241BDE2E25D6">
+<createdBy>droha</createdBy>
+<createdTime>2024-10-24 08:52:27 UTC</createdTime>
+<ownerDesignName>ERD FOR USER_PASS TABLE</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</BusinessInfoDesign>

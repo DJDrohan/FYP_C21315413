@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="50BD22F2-7983-892E-1965-44F6C1B3CD29" mainViewID="2D1C77F8-7A0E-9832-44C3-96BE3697DF14">
+<createdBy>droha</createdBy>
+<createdTime>2024-10-24 08:52:27 UTC</createdTime>
+<ownerDesignName>ERD FOR USER_PASS TABLE</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

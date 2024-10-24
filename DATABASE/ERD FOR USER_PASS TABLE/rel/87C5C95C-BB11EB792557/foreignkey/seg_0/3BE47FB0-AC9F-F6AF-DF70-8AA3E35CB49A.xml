@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="3BE47FB0-AC9F-F6AF-DF70-8AA3E35CB49A" containerWithKeyObject="029FE87F-AF68-CE6C-3497-FAC94784112B" localFKIndex="8F83306D-3C38-C39E-E6AB-3CC31159E81E" name="passwordsv1_user_FK">
+<createdBy>droha</createdBy>
+<createdTime>2024-10-24 09:15:43 UTC</createdTime>
+<generatorID>10572E2A-68CC-E5DC-C98A-50C4EBEF9A96</generatorID>
+<ownerDesignName>ERD FOR USER_PASS TABLE</ownerDesignName>
+<referredTableLongName>user</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>6FD64F0A-DC5A-DA06-0711-B3695178D5CE</referredTableID>
+<keyObject>0958630D-7DCF-CC22-C232-DE1895C90F32</keyObject>
+<referredKeyID>0958630D-7DCF-CC22-C232-DE1895C90F32</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

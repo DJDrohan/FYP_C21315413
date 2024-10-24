@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="User_FK" directorySegmentName="seg_0" id="10572E2A-68CC-E5DC-C98A-50C4EBEF9A96">
+<createdBy>droha</createdBy>
+<createdTime>2024-10-24 09:13:00 UTC</createdTime>
+<ownerDesignName>ERD FOR USER_PASS TABLE</ownerDesignName>
+<engineerTo>
+<item key="87C5C95C-3B11-6DB9-D460-BB11EB792557" value="true"/>
+</engineerTo>
+<sourcePk>DE99310F-6A60-6E27-11D9-62DC4D259EE8</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>95C43B53-D2BF-688A-C18C-20792EA6D6F7</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>4DCD1626-BDE1-9631-93E6-9295A0EC9065</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>
