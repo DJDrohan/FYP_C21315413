@@ -1,14 +1,48 @@
+import tkinter as tk
+from tkinter import messagebox
 import cv2
 import os
 import datetime
 import easygui as eg
+import psycopg2
 
-LOGIN_STATE_FILE = 'login_state.txt'
+# Database connection details (replace with actual values)
+DB_NAME = "postgres"
+DB_USER = "postgres"
+DB_PASSWORD = "Sp00ky!"
+DB_HOST = "localhost"
+DB_PORT = "12345"
 
-# Check if the user is logged in by reading the login state file
+# Connect to the database
+def connect_db():
+    try:
+        return psycopg2.connect(
+            dbname=DB_NAME,
+            user=DB_USER,
+            password=DB_PASSWORD,
+            host=DB_HOST,
+            port=DB_PORT
+        )
+    except Exception as e:
+        print(f"Error connecting to the database: {e}")
+        return None
+
+# Check if there is an active session for any user
 def check_login_status():
-    return os.path.exists(LOGIN_STATE_FILE)
+    conn = connect_db()
+    if not conn:
+        return False  # If the database connection fails, deny access
 
+    try:
+        with conn.cursor() as cur:
+            # Check if there is any active session
+            cur.execute('SELECT 1 FROM "FaceUsers".sessions LIMIT 1')
+            result = cur.fetchone()
+            return result is not None
+    finally:
+        conn.close()
+
+# Access the camera if the user is logged in
 def access_camera():
     if not check_login_status():
         eg.msgbox("Access denied. Please log in first.", "Error")

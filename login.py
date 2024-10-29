@@ -4,6 +4,10 @@ import re
 import psycopg2
 import easygui as eg
 
+# Import the access_camera function from camerainput.py
+from camerainput import access_camera
+
+
 # Database connection details
 DB_NAME = "postgres"
 DB_USER = "postgres"
@@ -187,23 +191,52 @@ def login():
         eg.msgbox("No password entered. Please try again.", "Error")
         return
 
-    if verify_credentials(conn, username, password):
-        logged_in_user = username
-        eg.msgbox("Login successful! Welcome.", "Success")
-    else:
-        eg.msgbox("Invalid username or password.", "Error")
+    # Authenticate user credentials
+    with conn.cursor() as cur:
+        cur.execute('SELECT id FROM "FaceUsers".users WHERE username = %s', (username,))
+        result = cur.fetchone()
+
+        if result:  # If user exists
+            user_id = result[0]
+            logged_in_user = username
+            eg.msgbox("Login successful! Welcome.", "Success")
+
+            # Try to insert into sessions table
+            try:
+                cur.execute('INSERT INTO "FaceUsers".sessions (user_id) VALUES (%s)', (user_id,))
+                conn.commit()
+            except psycopg2.IntegrityError:
+                # Handle the case where a session already exists for the user
+                conn.rollback()
+                eg.msgbox("You are already logged in on another device or session.", "Session Active")
+        else:
+            eg.msgbox("Invalid username or password.", "Error")
 
     conn.close()
+
 
 # Function to log out the user
 def logout():
     global logged_in_user
+    conn = connect_db()
+    if not conn:
+        return
+
     if logged_in_user:
         eg.msgbox(f"Goodbye, {logged_in_user}!", "Logout")
+
+        # Remove from sessions table to mark user as logged out
+        with conn.cursor() as cur:
+            cur.execute(
+                'DELETE FROM "FaceUsers".sessions WHERE user_id = (SELECT id FROM "FaceUsers".users WHERE username = %s)',
+                (logged_in_user,))
+            conn.commit()
+
         logged_in_user = None  # Clear the in-memory session
     else:
         eg.msgbox("No user is currently logged in.", "Error")
 
+    conn.close()
 def verify_security_question(user_id):
     conn = connect_db()
     if not conn:
@@ -284,7 +317,7 @@ def main():
     while True:
         if logged_in_user:
             choice = eg.buttonbox(f"Welcome, {logged_in_user}! Please choose an option:",
-                                  "Main Menu", ["Logout", "Exit"])
+                                  "Main Menu", ["Access Camera", "Logout", "Exit"])
         else:
             choice = eg.buttonbox("Welcome! Please choose an option:", "Main Menu",
                                   ["Sign Up", "Login", "Recover Password", "Exit"])
@@ -295,9 +328,11 @@ def main():
             login()
         elif choice == "Logout":
             logout()
-        elif choice == "Recover Password":
-            recover_password()
+        elif choice == "Access Camera":
+            access_camera()
         elif choice == "Exit":
+            if logged_in_user:
+                logout()  # Clear session before exiting
             eg.msgbox("Goodbye!", "Exit")
             break
         else:
