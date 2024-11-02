@@ -1,12 +1,19 @@
+import tkinter as tk
+from tkinter import messagebox
 import hashlib
 import os
 import re
 import psycopg2
 import easygui as eg
 
+
 # Import the access_camera function from camerainput.py
 from camerainput import access_camera
 
+# Create the main application window
+root = tk.Tk()
+root.title("User Login System")
+root.geometry("400x300")
 
 # Database connection details
 DB_NAME = "postgres"
@@ -19,8 +26,15 @@ DB_PORT = "12345"
 logged_in_user = None
 
 # Function to hash passwords or answers using SHA-256 along with salt
-def hash_data(data, salt):
-    return hashlib.sha256((salt + data).encode()).hexdigest()
+def hash_data(data, salt, iterations = 42):
+    # Initialize the hash with the salt and data
+    hash_result = (salt + data).encode()
+
+    # Hash iteratively
+    for _ in range(iterations):
+        hash_result = hashlib.sha256(hash_result).digest()
+
+    return hash_result
 
 # Function to connect to the PostgreSQL database
 def connect_db():
@@ -34,7 +48,7 @@ def connect_db():
         )
         return conn
     except Exception as e:
-        eg.msgbox(f"Error connecting to the database: {e}", "Database Error")
+        messagebox.showerror("Database Error", f"Error connecting to the database: {e}")
         return None
 
 # Function to validate password complexity
@@ -333,7 +347,6 @@ def main():
         elif choice == "Exit":
             if logged_in_user:
                 logout()  # Clear session before exiting
-            eg.msgbox("Goodbye!", "Exit")
             break
         else:
             eg.msgbox("Invalid choice. Please try again.", "Error")
